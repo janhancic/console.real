@@ -3,8 +3,11 @@ describe('console.real', function () {
 	beforeEach(function () {
 	});
 
-	it('works', function () {
-		expect(true).toBe(true);
+	describe('initialisation', function () {
+		it('console.real is defined', function () {
+			expect(console.real).toBeDefined();
+			expect(console.real.log).toBeDefined();
+		});
 	});
 
 });
