@@ -2,10 +2,6 @@
   "name": "console.real",
   "version": "0.0.1",
   "description": "A simple augmentation of the built-in `console` object in the browser.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/janhancic/console.real"
@@ -19,8 +15,6 @@
     "url": "https://github.com/janhancic/console.real/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jasmine": "~0.5.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt": "~0.4.2"
   }
 }
