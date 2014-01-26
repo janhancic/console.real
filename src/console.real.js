@@ -11,6 +11,7 @@ console.real = {};
 	console.real[consoleFunctionName] = function (/* arguments */) {
 		if (arguments.length === 0) {
 			console[consoleFunctionName]();
+			return;
 		}
 
 		var args = Array.prototype.slice.call(arguments).map(function(argument) {
