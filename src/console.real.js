@@ -7,16 +7,18 @@ if (typeof console.real !== 'undefined') {
 
 console.real = {};
 
-console.real.log = function (/* arguments */) {
-	if (arguments.length === 0) {
-		console.log();
-	}
+['log', 'info', 'error', 'warn'].forEach(function (consoleFunctionName) {
+	console.real[consoleFunctionName] = function (/* arguments */) {
+		if (arguments.length === 0) {
+			console[consoleFunctionName]();
+		}
 
-	var args = Array.prototype.slice.call(arguments).map(function(argument) {
-		return JSON.parse(JSON.stringify(argument));
-	});
+		var args = Array.prototype.slice.call(arguments).map(function(argument) {
+			return JSON.parse(JSON.stringify(argument));
+		});
 
-	console.log.call(console, args);
-};
+		console[consoleFunctionName].call(console, args);
+	};
+});
 
 }(console));
