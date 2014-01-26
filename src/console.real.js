@@ -7,10 +7,15 @@ if (typeof console.real !== 'undefined') {
 
 console.real = {};
 
-['log', 'info', 'error', 'warn'].forEach(function (consoleFunctionName) {
+var originalConsoleFunctions = {},
+	consoleFunctionNames = ['log', 'info', 'error', 'warn'];
+
+consoleFunctionNames.forEach(function (consoleFunctionName) {
+	originalConsoleFunctions[consoleFunctionName] = console[consoleFunctionName];
+
 	console.real[consoleFunctionName] = function (/* arguments */) {
 		if (arguments.length === 0) {
-			console[consoleFunctionName]();
+			originalConsoleFunctions[consoleFunctionName]();
 			return;
 		}
 
@@ -18,8 +23,17 @@ console.real = {};
 			return JSON.parse(JSON.stringify(argument));
 		});
 
-		console[consoleFunctionName].apply(console, args);
+		originalConsoleFunctions[consoleFunctionName].apply(console, args);
 	};
 });
+
+/**
+ * "Installs" the augmented console functions into the `console` object, replacing the originals.
+ */
+console.real.install = function () {
+	consoleFunctionNames.forEach(function(consoleFunctionName) {
+		console[consoleFunctionName] = console.real[consoleFunctionName];
+	});
+};
 
 }(console));
