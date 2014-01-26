@@ -1,4 +1,4 @@
-;(function (console) {
+;(function (console, JSON) {
 'use strict';
 
 if (typeof console.real !== 'undefined') {
@@ -36,4 +36,4 @@ console.real.install = function () {
 	});
 };
 
-}(console));
+}(console, JSON));

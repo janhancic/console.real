@@ -15,6 +15,7 @@
     "url": "https://github.com/janhancic/console.real/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.2"
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.3.2"
   }
 }
