@@ -13,7 +13,7 @@ You can also call `console.real.install()` which will replace the console method
 Arguments are cloned with the JSON stringify/parse "trick", which means that it will not log methods.
 The performance will obviously also degrade, so use with caution.
 
-# Browsers support
+# Browser support
 Should work in ES5 compliant browsers that have: console, JSON, Array#forEach and Array#map objects/methods.
 
 ## License
