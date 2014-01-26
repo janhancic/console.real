@@ -1,0 +1,28 @@
+{
+  "name": "console.real",
+  "version": "1.0.0",
+  "homepage": "https://github.com/janhancic/console.real",
+  "authors": [
+    "Jan Hancic <jan.hancic@gmail.com>"
+  ],
+  "description": "A simple augmentation of the built-in `console` object in the browser.",
+  "main": "build/console.real.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:janhancic/console.real.git"
+  },
+  "keywords": [
+    "browser",
+    "console",
+    "log"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "package.json",
+    "Gruntfile.js",
+    "example.html"
+  ]
+}
