@@ -5,10 +5,13 @@ module.exports = function (grunt) {
 			options: {
 				specs : 'specs/console.real.spec.js'
 			}
+		},
+		watch: {
+			files: ['src/console.real.js', 'specs/console.real.spec.js'],
+			tasks: 'jasmine'
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
-
-	// grunt.registerTask('default', 'jasmine');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 };
