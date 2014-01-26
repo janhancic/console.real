@@ -18,7 +18,7 @@ console.real = {};
 			return JSON.parse(JSON.stringify(argument));
 		});
 
-		console[consoleFunctionName].call(console, args);
+		console[consoleFunctionName].apply(console, args);
 	};
 });
 
