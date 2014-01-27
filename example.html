@@ -8,15 +8,29 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			console.real.log(1,2,3,4, 'a', {a: 1}, [1, 2]);
-			console.log(1,2,3,4, 'a', {a: 1}, [1, 2]);
+			// console.real.log(1,2,3,4, 'a', {a: 1}, [1, 2]);
+			// console.log(1,2,3,4, 'a', {a: 1}, [1, 2]);
 			// console.real.info(1,2,3,4, 'a', {a: 1}, [1, 2]);
 			// console.real.warn(1,2,3,4, 'a', {a: 1}, [1, 2]);
 			// console.real.error(1,2,3,4, 'a', {a: 1}, [1, 2]);
 			
-			console.real.install();
+			// console.real.install();
 			// console.real.log(1,2,3,4, 'a', {a: 1}, [1, 2]);
-			console.log(1,2,3,4, 'a', {a: 1}, [1, 2]);
+			// console.log(1,2,3,4, 'a', {a: 1}, [1, 2]);
+
+			var obj = {
+				bob: 1,
+				foo: "bla bla bla",
+				baz: [1, 2, {bob: 2}],
+				xyz: {
+					bob: 3
+				},
+				hhh: null,
+				lll: undefined,
+				rrr: function(i) { var a = 1; }
+			};
+
+			console.real.log(obj);
 		</script>
 	</body>
 </html>
