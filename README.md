@@ -10,8 +10,7 @@ Include the `build/console.real.min.js` file into your web page. Then you can ca
 You can also call `console.real.install()` which will replace the console methods with the augmented ones.
 
 # Notes
-Arguments are cloned with the JSON stringify/parse "trick", which means that it will not log methods.
-The performance will obviously also degrade, so use with caution.
+Internally every passed argument is deep cloned, which means there are performance penalties for using this.
 
 # Browser support
 Should work in ES5 compliant browsers that have: console, JSON, Array#forEach and Array#map objects/methods.
